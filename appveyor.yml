@@ -5,6 +5,7 @@ build_script:
 test_script:
 - cmd: >-
     .\test.cmd
+    
     .\package.cmd
 artifacts:
 - path: appveyor-wix-sample.msi
