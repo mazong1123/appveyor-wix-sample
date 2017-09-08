@@ -1,0 +1,17 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+build_script:
+- cmd: .\build.cmd
+test_script:
+- cmd: >-
+    .\test.cmd
+    .\package.cmd
+artifacts:
+- path: appveyor-wix-sample.msi
+  name: appveyor-wix-sample.msi
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: i9q712s9bxrdy7pOC4Gcvfb5Ym2KMBYPCCrPE0xFb55erEt+uiM0fe1NGMTsqRnx
+  on:
+    APPVEYOR_REPO_TAG: true
